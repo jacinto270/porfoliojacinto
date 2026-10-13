@@ -1,4 +1,37 @@
 (() => {
+  const themeToggle = document.getElementById('themeToggle');
+  const themeToggleIcon = themeToggle.querySelector('[aria-hidden="true"]');
+  const themeColor = document.querySelector('meta[name="theme-color"]');
+  const systemPrefersDark = matchMedia('(prefers-color-scheme: dark)');
+  const savedTheme = localStorage.getItem('portfolio-theme');
+
+  if (savedTheme === 'light' || savedTheme === 'dark') {
+    document.documentElement.dataset.theme = savedTheme;
+  }
+
+  const isDarkTheme = () => document.documentElement.dataset.theme
+    ? document.documentElement.dataset.theme === 'dark'
+    : systemPrefersDark.matches;
+  const updateThemeToggle = () => {
+    const dark = isDarkTheme();
+    const label = dark ? 'Activar modo claro' : 'Activar modo oscuro';
+    themeToggle.setAttribute('aria-label', label);
+    themeToggle.title = label;
+    themeToggleIcon.textContent = dark ? '☀' : '☾';
+    themeColor.content = dark ? '#131b29' : '#f2eee6';
+  };
+
+  updateThemeToggle();
+  themeToggle.addEventListener('click', () => {
+    const theme = isDarkTheme() ? 'light' : 'dark';
+    document.documentElement.dataset.theme = theme;
+    localStorage.setItem('portfolio-theme', theme);
+    updateThemeToggle();
+  });
+  systemPrefersDark.addEventListener('change', () => {
+    if (!document.documentElement.dataset.theme) updateThemeToggle();
+  });
+
   const stage = document.getElementById('stage');
   const layers = [...stage.querySelectorAll('.layer')];
   const clamp = v => Math.max(-1, Math.min(1, v));

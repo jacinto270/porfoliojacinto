@@ -15,6 +15,7 @@
     'ejerciciosjava',
     'proyectofinal',
     'formulario-t3-practica',
+    'porfoliojacinto',
     'porfolio'
   ];
   const projectPresentation = {
@@ -28,13 +29,13 @@
       title: 'DemoViedb',
       description: 'Proyecto JavaScript para explorar información relacionada con películas y contenido audiovisual.',
       image: 'https://raw.githubusercontent.com/jacinto270/demoviedb/main/assets/nevermore_bg.jpg',
-      netlifyUrl: ''
+      netlifyUrl: 'https://demoviedb.netlify.app/'
     },
     'mi-lista-de-canciones': {
       title: 'Mi lista de canciones',
       description: 'Aplicación web para organizar y consultar una selección personal de canciones.',
-      image: 'https://opengraph.githubassets.com/1/jacinto270/mi-lista-de-canciones',
-      netlifyUrl: ''
+      image: 'images/mi-lista-de-canciones.jpeg',
+      netlifyUrl: 'https://listadecancionesjacinto.netlify.app/'
     },
     adolescente: {
       title: 'Adolescente',
@@ -63,7 +64,7 @@
     'formulario-t3-practica': {
       title: 'Formulario T3',
       description: 'Práctica de desarrollo web centrada en la creación y presentación de formularios.',
-      image: 'https://opengraph.githubassets.com/1/jacinto270/formulario-t3-practica',
+      image: 'images/formulario-t3.jpg',
       netlifyUrl: ''
     },
     porfolio: {
@@ -71,6 +72,12 @@
       description: 'Proyecto de portfolio personal para presentar trabajos y practicar diseño y desarrollo web.',
       image: 'https://raw.githubusercontent.com/jacinto270/porfolio/main/img/web.png',
       netlifyUrl: 'https://julioweb24.netlify.app/'
+    },
+    porfoliojacinto: {
+      title: 'Portfolio Jacinto',
+      description: 'Portfolio personal interactivo con un retrato ilustrado por capas.',
+      image: 'images/portfolio-jacinto-preview.png',
+      netlifyUrl: ''
     }
   };
   const starterRepositories = projectOrder.map(name => ({
