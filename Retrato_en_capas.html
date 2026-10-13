@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2eee6">
+  <title>Jacinto Juarez Rodriguez — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&amp;family=Atkinson+Hyperlegible:wght@400;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap">
+  <link rel="stylesheet" href="css/portfolio.css">
+</head>
+<body>
+
+
+
+<div class="wrap" id="inicio">
+  <header class="site-header">
+    <a class="wordmark" href="#" aria-label="Inicio">JJ<span>®</span></a>
+    <nav class="site-nav" aria-label="Navegación principal">
+      <a href="#muro">El muro</a>
+      <a href="#contacto">Contacto</a>
+      <span class="availability"><i></i> Ideas · diseño · proyectos</span>
+    </nav>
+  </header>
+
+  <section class="demo">
+    <div class="stage-box">
+      <div class="stage" id="stage" aria-label="Ilustración de una persona con pelo desaliñado con raya al lado, barba corta y bigote, sin gafas, sonriendo y girando la cabeza hacia el puntero" role="img">
+        <div class="scene">
+          <!-- 1 · fondo: se mueve al revés que la cara -->
+          <div class="layer" data-layer="Fondo" style="--dx:-10;--dy:-6;--z:0">
+            <svg viewBox="0 0 400 440" aria-hidden="true">
+              <defs>
+                <pattern id="dots" width="12" height="12" patternUnits="userSpaceOnUse">
+                  <circle cx="3" cy="3" r="2" fill="#e0a92f"/>
+                </pattern>
+              </defs>
+              <circle cx="200" cy="215" r="172" fill="var(--sun)"/>
+              <circle cx="200" cy="215" r="172" fill="url(#dots)" opacity=".55"/>
+            </svg>
+          </div>
+          <!-- 2 · cuerpo: traje con camisa blanca y corbata -->
+          <div class="layer" data-layer="Cuerpo" style="--dx:3;--dy:1;--z:1">
+            <svg viewBox="0 0 400 440" aria-hidden="true">
+              <rect x="175" y="290" width="50" height="62" fill="var(--skin)" stroke="var(--line)" stroke-width="4"/>
+              <path d="M74 446 C84 372 140 342 200 342 C260 342 316 372 326 446 Z" fill="#1f2840" transform="translate(6 5)"/>
+              <path d="M74 446 C84 372 140 342 200 342 C260 342 316 372 326 446 Z" fill="#364260" stroke="var(--line)" stroke-width="4" stroke-linejoin="round"/>
+              <path d="M168 342 L200 424 L232 342 Q200 358 168 342 Z" fill="var(--white)" stroke="var(--line)" stroke-width="4" stroke-linejoin="round"/>
+              <path d="M164 336 L198 372 L176 386 L158 350 Z M236 336 L202 372 L224 386 L242 350 Z" fill="var(--white)" stroke="var(--line)" stroke-width="4" stroke-linejoin="round"/>
+              <path d="M194 376 L206 376 L208 388 L192 388 Z" fill="var(--coral)" stroke="var(--line)" stroke-width="3.5" stroke-linejoin="round"/>
+              <path d="M192 388 L208 388 L218 436 L200 448 L182 436 Z" fill="var(--coral)" stroke="var(--line)" stroke-width="3.5" stroke-linejoin="round"/>
+              <path d="M190 408 L210 400 M186 424 L214 416" stroke="var(--white)" stroke-width="3" opacity=".6"/>
+              <path d="M142 358 L170 440 L184 404 M258 358 L230 440 L216 404" fill="none" stroke="var(--line)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="head">
+            <!-- 3 · orejas -->
+            <div class="layer" data-layer="Orejas" style="--dx:-9;--dy:3;--z:2">
+              <svg viewBox="0 0 400 440" aria-hidden="true">
+                <ellipse cx="110" cy="232" rx="20" ry="26" fill="var(--skin)" stroke="var(--line)" stroke-width="4"/>
+                <ellipse cx="290" cy="232" rx="20" ry="26" fill="var(--skin)" stroke="var(--line)" stroke-width="4"/>
+                <path d="M112 222 q-8 10 0 20 M288 222 q8 10 0 20" fill="none" stroke="var(--line)" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <!-- 4 · cara: mandíbula más cuadrada -->
+            <div class="layer" data-layer="Cara" style="--dx:13;--dy:8;--z:3">
+              <svg viewBox="0 0 400 440" aria-hidden="true">
+                <path d="M110 200 C110 140 150 118 200 118 C250 118 290 140 290 200 L288 262 C286 310 250 336 200 336 C150 336 114 310 112 262 Z" fill="#efb189" transform="translate(6 5)"/>
+                <path d="M110 200 C110 140 150 118 200 118 C250 118 290 140 290 200 L288 262 C286 310 250 336 200 336 C150 336 114 310 112 262 Z" fill="var(--skin)" stroke="var(--line)" stroke-width="4" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <!-- 5 · barba corta oscura -->
+            <div class="layer" data-layer="Barba" style="--dx:18;--dy:11;--z:4">
+              <svg viewBox="0 0 400 440" aria-hidden="true">
+                <path d="M113 226 L112 262 C114 310 150 336 200 336 C250 336 286 310 288 262 L287 226 C280 250 270 262 256 268 C240 262 226 258 200 258 C174 258 160 262 144 268 C130 262 120 250 113 226 Z" fill="#5b4f4b" opacity=".5"/>
+                <ellipse cx="200" cy="326" rx="20" ry="8" fill="#4a3f3c" opacity=".6"/>
+                <g fill="#2b2523" opacity=".55">
+                  <circle cx="126" cy="262" r="1.8"/><circle cx="136" cy="284" r="1.8"/><circle cx="148" cy="304" r="1.8"/><circle cx="166" cy="320" r="1.8"/><circle cx="140" cy="272" r="1.8"/><circle cx="156" cy="292" r="1.8"/>
+                  <circle cx="274" cy="262" r="1.8"/><circle cx="264" cy="284" r="1.8"/><circle cx="252" cy="304" r="1.8"/><circle cx="234" cy="320" r="1.8"/><circle cx="260" cy="272" r="1.8"/><circle cx="244" cy="292" r="1.8"/>
+                </g>
+                <path d="M113 226 L112 262 C114 310 150 336 200 336 C250 336 286 310 288 262 L287 226" fill="none" stroke="var(--line)" stroke-width="4" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <!-- 6 · mejillas y boca: sonrisa pícara con la boca cerrada -->
+            <div class="layer" data-layer="Boca y mejillas" style="--dx:22;--dy:14;--z:5">
+              <svg viewBox="0 0 400 440" aria-hidden="true">
+                <path d="M164 290 Q200 312 238 286" fill="none" stroke="var(--line)" stroke-width="5" stroke-linecap="round"/>
+                <path d="M184 303 Q204 312 222 300 Q206 322 184 303 Z" fill="#c9605a" opacity=".85"/>
+              </svg>
+            </div>
+            <!-- 7 · ojos (blanco), bien abiertos -->
+            <div class="layer blink" data-layer="Ojos" style="--dx:22;--dy:14;--z:6">
+              <svg viewBox="0 0 400 440" aria-hidden="true">
+                <circle cx="166" cy="222" r="21" fill="var(--white)" stroke="var(--line)" stroke-width="3.5"/>
+                <circle cx="234" cy="222" r="21" fill="var(--white)" stroke="var(--line)" stroke-width="3.5"/>
+              </svg>
+            </div>
+            <!-- 8 · pupilas (iris marrón) -->
+            <div class="layer blink" data-layer="Pupilas" style="--dx:29;--dy:19;--z:7">
+              <svg viewBox="0 0 400 440" aria-hidden="true">
+                <circle cx="166" cy="222" r="11.5" fill="#5a3a2a"/>
+                <circle cx="234" cy="222" r="11.5" fill="#5a3a2a"/>
+                <circle cx="166" cy="222" r="5.5" fill="var(--line)"/>
+                <circle cx="234" cy="222" r="5.5" fill="var(--line)"/>
+                <circle cx="169.5" cy="218.5" r="3.2" fill="var(--white)"/>
+                <circle cx="237.5" cy="218.5" r="3.2" fill="var(--white)"/>
+              </svg>
+            </div>
+            <!-- 9 · cejas gruesas: simétricas -->
+            <div class="layer" data-layer="Cejas" style="--dx:24;--dy:22;--z:8">
+              <svg viewBox="0 0 400 440" aria-hidden="true">
+                <path d="M144 188 Q166 172 190 182 M210 182 Q234 172 256 188" fill="none" stroke="#2b2523" stroke-width="8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <!-- 10 · nariz -->
+            <div class="layer" data-layer="Nariz" style="--dx:31;--dy:18;--z:9">
+              <svg viewBox="0 0 400 440" aria-hidden="true">
+                <path d="M205 236 C196 252 192 262 206 266 Z" fill="var(--coral)" opacity=".5" transform="translate(4 3)"/>
+                <path d="M201 230 C193 250 190 262 206 264 M192 262 Q197 268 203 266" fill="none" stroke="var(--line)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <!-- 11 · bigote -->
+            <div class="layer" data-layer="Bigote" style="--dx:30;--dy:17;--z:10">
+              <svg viewBox="0 0 400 440" aria-hidden="true">
+                <path d="M156 282 Q172 264 200 274 Q228 264 244 282 Q226 288 200 280 Q174 288 156 282 Z" fill="#3a312f" stroke="var(--line)" stroke-width="3" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <!-- 12 · pelo desaliñado con raya al lado -->
+            <div class="layer" data-layer="Pelo" style="--dx:16;--dy:10;--z:11">
+              <svg viewBox="0 0 400 440" aria-hidden="true">
+                <path d="M112 196 C106 160 108 140 124 126 L118 110 L138 116 C150 100 164 96 170 90 L176 104 C190 94 206 92 214 88 L220 102 C238 96 252 100 260 96 L262 110 C276 112 284 126 288 142 L298 138 L290 160 C292 172 290 184 288 196 C286 188 282 178 276 172 L270 178 L264 166 C250 160 236 158 228 152 L224 162 C206 152 188 148 168 140 C152 146 136 156 128 168 L122 178 C118 184 114 190 112 196 Z" fill="#1a1514" transform="translate(5 4)"/>
+                <path d="M112 196 C106 160 108 140 124 126 L118 110 L138 116 C150 100 164 96 170 90 L176 104 C190 94 206 92 214 88 L220 102 C238 96 252 100 260 96 L262 110 C276 112 284 126 288 142 L298 138 L290 160 C292 172 290 184 288 196 C286 188 282 178 276 172 L270 178 L264 166 C250 160 236 158 228 152 L224 162 C206 152 188 148 168 140 C152 146 136 156 128 168 L122 178 C118 184 114 190 112 196 Z" fill="#2b2523" stroke="var(--line)" stroke-width="4" stroke-linejoin="round"/>
+                <path d="M232 156 L248 160 L242 184 Z M196 150 L210 154 L204 170 Z" fill="#2b2523" stroke="var(--line)" stroke-width="3" stroke-linejoin="round"/>
+                <path d="M164 104 Q166 124 168 140" fill="none" stroke="var(--line)" stroke-width="3.5" stroke-linecap="round"/>
+                <path d="M172 118 Q226 94 282 136 M178 130 Q232 106 286 154 M192 110 Q236 100 266 124 M160 118 Q132 118 118 152" fill="none" stroke="#5a504d" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="hint" id="hint">Pasa el puntero por la página para que gire la cabeza.</p>
+    </div>
+
+    <aside class="panel hero-copy">
+      <p class="eyebrow">Portfolio creativo · 2026</p>
+      <h1>Jacinto<br><em>Juarez</em><br>Rodriguez<span class="period">.</span></h1>
+      <p class="hero-description">Ideas que dejan huella.<br>Diseño, creatividad y proyectos<br>hechos con intención.</p>
+      <a class="wall-link" href="#muro">Explora mi muro <span aria-hidden="true">↘</span></a>
+      <div class="hero-note"><span>01 / 03</span><span>Arrastra el cursor y descubre</span></div>
+    </aside>
+  </section>
+
+  <section class="wall-section" id="muro">
+    <div class="section-heading">
+      <div><p class="eyebrow">Pinta para descubrir</p><h2>Mi muro<span class="period">.</span></h2></div>
+      <p>Como en la calle: cada capa guarda una historia.<br>Usa el spray para sacar a la luz lo que hay debajo.</p>
+    </div>
+    <div class="graffiti-wall">
+      <article class="graffiti-card card-experience" data-card-id="experiencia">
+        <div class="card-copy">
+          <span class="card-index">01 — EXPERIENCIA</span>
+          <h3 data-card-title>Trayectoria</h3>
+          <p data-card-description>curso de especializacion en desarrollo de aplicaciones con tecnologias web</p>
+          <a class="card-tag" href="detalle.html?seccion=experiencia" target="_blank" rel="noopener noreferrer">Experiencia profesional</a>
+        </div>
+        <canvas class="paint-surface" aria-hidden="true"></canvas>
+        <button class="reveal-button" type="button">Descubrir con spray <span aria-hidden="true">✳</span></button>
+      </article>
+      <article class="graffiti-card card-project" data-card-id="proyecto-destacado">
+        <div class="card-copy">
+          <span class="card-index">02 — PROYECTOS</span>
+          <h3 data-card-title>Ideas en acción</h3>
+          <p data-card-description>Presenta aquí un proyecto: qué reto resolviste y cuál fue el resultado.</p>
+          <a class="card-tag" href="detalle.html?seccion=proyecto-destacado" target="_blank" rel="noopener noreferrer">Proyecto destacado</a>
+        </div>
+        <canvas class="paint-surface" aria-hidden="true"></canvas>
+        <button class="reveal-button" type="button">Descubrir con spray <span aria-hidden="true">✳</span></button>
+      </article>
+      <article class="graffiti-card card-project" data-card-id="colaboracion">
+        <div class="card-copy">
+          <span class="card-index">03 — PROYECTOS</span>
+          <h3 data-card-title>Otra creación</h3>
+          <p data-card-description>Un espacio más para compartir otro trabajo, colaboración o logro.</p>
+          <a class="card-tag" href="proyectos.html" target="_blank" rel="noopener noreferrer">Proyecto / colaboración</a>
+        </div>
+        <canvas class="paint-surface" aria-hidden="true"></canvas>
+        <button class="reveal-button" type="button">Descubrir con spray <span aria-hidden="true">✳</span></button>
+      </article>
+      <article class="graffiti-card card-experience" data-card-id="perfil">
+        <div class="card-copy">
+          <span class="card-index">04 — EXPERIENCIA</span>
+          <h3 data-card-title>Lo que aporto</h3>
+          <p data-card-description>Cuenta aquí tus habilidades, especialidades y aquello que te mueve.</p>
+          <a class="card-tag" href="detalle.html?seccion=perfil" target="_blank" rel="noopener noreferrer">Perfil &amp; habilidades</a>
+        </div>
+        <canvas class="paint-surface" aria-hidden="true"></canvas>
+        <button class="reveal-button" type="button">Descubrir con spray <span aria-hidden="true">✳</span></button>
+      </article>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contacto">
+    <div>
+      <p class="eyebrow">¿Tienes algo en mente?</p>
+      <h2>Hablemos<span class="period">.</span></h2>
+    </div>
+    <div class="contact-details">
+      <span>Correo electrónico</span>
+      <p>jacintojuarezrodriguez@gmail.com</p>
+      <span>Contacto</span>
+      <p>tlf: 621 06 89 23<p>
+    </div>
+    <span class="contact-mark" aria-hidden="true">JJ</span>
+  </section>
+  <footer><span>JACINTO JUAREZ RODRIGUEZ</span><span>Hecho con intención · 2026</span><a href="#inicio">Volver arriba ↑</a></footer>
+</div>
+
+<script src="js/card-content.js" defer></script>
+<script src="js/portfolio.js" defer></script>
+
+</body>
+</html>
