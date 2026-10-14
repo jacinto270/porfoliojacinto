@@ -2,6 +2,7 @@
   const githubApi = 'https://api.github.com/users/jacinto270/repos?sort=updated&per_page=100';
   const list = document.getElementById('projectsList');
   const status = document.getElementById('projectsStatus');
+  const portfolioTechnologies = ['HTML', 'CSS', 'JavaScript'];
 
   // Personaliza aquí el orden, título, descripción, imagen y URL pública de cada proyecto.
   // Sustituye image por una ruta propia, por ejemplo "images/mi-proyecto.jpg".
@@ -78,6 +79,12 @@
       description: 'Portfolio personal interactivo con un retrato ilustrado por capas.',
       image: 'images/portfolio-jacinto-preview.png',
       netlifyUrl: ''
+    },
+    jacinto270: {
+      title: 'Jacinto270 en GitHub',
+      description: 'Mi perfil y mis proyectos en GitHub.',
+      image: 'https://github.com/jacinto270.png',
+      githubUrl: 'https://github.com/jacinto270'
     }
   };
   const starterRepositories = projectOrder.map(name => ({
@@ -124,12 +131,22 @@
     card.append(media);
 
     const content = makeElement('div', 'repo-content');
-    content.append(
-      makeElement('p', 'eyebrow', repository.language || 'Proyecto'),
-      makeElement('h2', '', title)
-    );
+    content.append(makeElement('h2', '', title));
     if (description) {
       content.append(makeElement('p', 'repo-description', description));
+    }
+    const technologies = makeElement('ul', 'repo-technologies');
+    technologies.setAttribute('aria-label', 'Tecnologías utilizadas');
+    portfolioTechnologies.forEach(technology => {
+      technologies.append(makeElement('li', 'repo-technology', technology));
+    });
+    content.append(technologies);
+    if (presentation.githubUrl) {
+      const githubLink = makeElement('a', 'repo-link', 'Ver perfil en GitHub ↗');
+      githubLink.href = presentation.githubUrl;
+      githubLink.target = '_blank';
+      githubLink.rel = 'noopener noreferrer';
+      content.append(githubLink);
     }
     if (presentation.netlifyUrl) {
       const demoLink = makeElement('a', 'repo-link', 'Ver proyecto online ↗');

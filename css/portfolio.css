@@ -247,6 +247,8 @@ a, button, canvas { cursor: inherit; }
 .repo-content .eyebrow { margin: 0; }
 .repo-content h2 { overflow-wrap: anywhere; margin: 0; font: 800 clamp(25px, 4vw, 36px)/1.05 var(--display); }
 .repo-description { margin: 0; white-space: pre-line; }
+.repo-technologies { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.repo-technology { padding: 5px 10px; border: 1px solid var(--rule); border-radius: 999px; color: var(--fg); background: var(--paper); font: 600 11px var(--mono); }
 .repo-link { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px; padding: 11px 17px; border: 1px solid var(--accent); color: var(--accent-ink); background: var(--accent); font: 600 12px var(--mono); text-decoration: none; text-transform: uppercase; transition: color .2s, background .2s, border-color .2s, transform .2s; }
 .repo-link:hover { border-color: var(--fg); color: var(--panel); background: var(--fg); transform: translateY(-2px); }
 .repo-link:focus-visible { outline: 3px solid var(--fg); outline-offset: 3px; }
