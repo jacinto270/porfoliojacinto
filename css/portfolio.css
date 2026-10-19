@@ -265,6 +265,15 @@ a, button, canvas { cursor: inherit; }
 .contact-details { display: grid; grid-template-columns: 1fr; gap: 2px; }
 .contact-details span { margin-top: 12px; color: var(--muted); font: 10px var(--mono); text-transform: uppercase; }
 .contact-details p { margin: 0; font-size: 17px; }
+.contact-email { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.contact-email p { overflow-wrap: anywhere; }
+.email-button { display: inline-flex; flex: 0 0 42px; align-items: center; justify-content: center; width: 42px; height: 42px; border: 1px solid var(--fg); border-radius: 50%; color: var(--fg); transition: color .2s, background .2s, border-color .2s, transform .2s; }
+.email-button svg { width: 20px; height: 20px; }
+.email-button:hover { border-color: var(--accent); color: var(--accent-ink); background: var(--accent); transform: translateY(-2px); }
+.contact-phone { display: flex; align-items: center; gap: 12px; }
+.whatsapp-button { display: inline-flex; flex: 0 0 42px; align-items: center; justify-content: center; width: 42px; height: 42px; border: 1px solid #25d366; border-radius: 50%; color: #fff; background: #25d366; transition: background .2s, border-color .2s, transform .2s; }
+.whatsapp-button svg { width: 22px; height: 22px; }
+.whatsapp-button:hover { border-color: #128c4a; background: #128c4a; transform: translateY(-2px); }
 .contact-mark { position: absolute; right: 0; bottom: -58px; color: #e8e0d3; font: 800 190px/.9 var(--display); letter-spacing: -.12em; pointer-events: none; }
 footer { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 0 4px; color: var(--muted); font: 9px var(--mono); letter-spacing: .04em; }
 footer a { color: var(--fg); text-decoration: none; }
