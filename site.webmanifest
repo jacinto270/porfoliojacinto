@@ -1,0 +1,16 @@
+{
+  "name": "Jacinto Juárez Rodríguez — Portafolio",
+  "short_name": "Jacinto JJ",
+  "description": "Portafolio creativo de Jacinto Juárez Rodríguez.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f2eee6",
+  "theme_color": "#f2eee6",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
