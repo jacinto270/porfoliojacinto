@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <clipPath id="c"><circle cx="32" cy="32" r="30"/></clipPath>
+    <pattern id="d" width="5" height="5" patternUnits="userSpaceOnUse"><circle cx="1.5" cy="1.5" r="1" fill="#e0a92f"/></pattern>
+  </defs>
+  <circle cx="32" cy="32" r="30" fill="#f2c14e"/>
+  <circle cx="32" cy="32" r="30" fill="url(#d)" opacity=".6"/>
+  <g clip-path="url(#c)"><g transform="translate(32 33) scale(1.2) translate(-32 -30)" stroke="#1d2a44" stroke-linejoin="round">
+    <!-- traje, camisa y corbata -->
+    <path d="M10 66 C12 54 21 49 32 49 C43 49 52 54 54 66 Z" fill="#364260" stroke-width="2"/>
+    <path d="M27 49 L32 59 L37 49 Z" fill="#fffdf8" stroke-width="1.6"/>
+    <path d="M30.6 51 L33.4 51 L34.6 61 L32 64 L29.4 61 Z" fill="#ef6f5e" stroke-width="1.4"/>
+    <!-- orejas y cara -->
+    <ellipse cx="17.5" cy="32" rx="3" ry="4" fill="#f6c9a8" stroke-width="1.6"/>
+    <ellipse cx="46.5" cy="32" rx="3" ry="4" fill="#f6c9a8" stroke-width="1.6"/>
+    <path d="M18 28 C18 18 24 14 32 14 C40 14 46 18 46 28 L46 37 C46 45 40 49 32 49 C24 49 18 45 18 37 Z" fill="#f6c9a8" stroke-width="2"/>
+    <!-- barba -->
+    <path d="M18.2 34 L18 37 C18 45 24 49 32 49 C40 49 46 45 46 37 L45.8 34 C44 39 40 41 32 40.5 C24 41 20 39 18.2 34 Z" fill="#5b4f4b" opacity=".55" stroke="none"/>
+    <!-- pelo -->
+    <path d="M17.5 30 C15 20 18 13 24 11.5 L23 7 L28 9.5 L31 5 L34.5 9.5 L40 7 L40.5 11.5 C46 13.5 49 20 46.5 30 C45 25 42 22.5 38 21.5 L36 24 L34 20.5 C29 19.5 25 20.5 22 23 C20 25 18.5 27.5 17.5 30 Z" fill="#2b2523" stroke-width="1.8"/>
+    <!-- cejas -->
+    <path d="M22.5 24.5 Q26.5 22 30 23.5 M34 23.5 Q37.5 22 41.5 24.5" fill="none" stroke="#2b2523" stroke-width="2.4" stroke-linecap="round"/>
+    <!-- ojos -->
+    <circle cx="26.5" cy="30" r="4.6" fill="#fffdf8" stroke-width="1.4"/>
+    <circle cx="37.5" cy="30" r="4.6" fill="#fffdf8" stroke-width="1.4"/>
+    <circle cx="27.2" cy="30.3" r="2.4" fill="#1d2a44" stroke="none"/>
+    <circle cx="38.2" cy="30.3" r="2.4" fill="#1d2a44" stroke="none"/>
+    <circle cx="28" cy="29.4" r=".8" fill="#fff" stroke="none"/>
+    <circle cx="39" cy="29.4" r=".8" fill="#fff" stroke="none"/>
+    <!-- bigote y sonrisa -->
+    <path d="M24.5 39.5 Q28 36 32 37.6 Q36 36 39.5 39.5 Q36 40.6 32 39.4 Q28 40.6 24.5 39.5 Z" fill="#3a312f" stroke-width="1.2"/>
+    <path d="M27.5 43 Q32 45.5 36.5 43" fill="none" stroke-width="1.6" stroke-linecap="round"/>
+  </g></g>
+  <circle cx="32" cy="32" r="30" fill="none" stroke="#1d2a44" stroke-width="2.5"/>
+</svg>

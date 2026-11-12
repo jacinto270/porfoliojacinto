@@ -2,29 +2,67 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f2eee6">
-  <title>Mis proyectos — Jacinto Juarez Rodriguez</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5e6d3">
+  <title>Proyectos — Jacinto Juárez Rodríguez</title>
+  <meta name="description" content="Proyectos web de Jacinto Juárez Rodríguez: HTML, CSS, JavaScript, PHP y SQL, con demos y código en GitHub.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&amp;family=Atkinson+Hyperlegible:wght@400;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap">
   <link rel="stylesheet" href="css/portfolio.css">
+  <script src="js/theme.js"></script>
 </head>
 <body>
-  <main class="projects-page">
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<div class="wrap">
+  <header class="site-header page-header">
+    <a class="wordmark" href="index.html" aria-label="Jacinto Juárez Rodríguez, volver al inicio"><img class="wordmark-icon" src="images/favicon.svg" alt="" width="40" height="40"><span class="wordmark-text">Jacinto J.R<span class="period">.</span></span></a>
+    <nav class="site-nav" aria-label="Navegación principal">
+      <a href="index.html">Inicio</a>
+      <a href="index.html#sobre-mi">Sobre mí</a>
+      <a href="index.html#contacto">Contacto</a>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Activar modo oscuro" title="Activar modo oscuro">
+        <svg class="icon-moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/></svg>
+        <svg class="icon-sun" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main class="projects-page" id="contenido">
     <header class="projects-header">
       <div>
-        <p class="eyebrow">Jacinto Juarez Rodriguez · Portfolio</p>
-        <h1>Mis proyectos<span class="period">.</span></h1>
-        <p>Una selección de mis proyectos y repositorios.</p>
+        <p class="eyebrow">Portfolio · Proyectos</p>
+        <h1>Proyectos<span class="period">.</span></h1>
+        <p>Una selección de lo que he construido durante mi formación y por mi cuenta. Cada proyecto incluye su código en GitHub y, cuando está publicada, una demo para probarlo.</p>
       </div>
+      <a class="button button-ghost" href="https://github.com/jacinto270" target="_blank" rel="noopener noreferrer">Perfil de GitHub <span aria-hidden="true">↗</span></a>
     </header>
+
     <p class="projects-status" id="projectsStatus" role="status" aria-live="polite"></p>
-    <section class="projects-list" id="projectsList" aria-label="Proyectos">
-      <p>Cargando repositorios…</p>
+
+    <section aria-labelledby="showcase-title">
+      <h2 class="sr-only" id="showcase-title">Proyectos destacados</h2>
+      <div class="showcase-grid" id="projectsShowcase">
+        <p class="loading">Cargando proyectos…</p>
+      </div>
     </section>
-    <a class="projects-back" href="Retrato_en_capas.html#muro">← Volver al portfolio</a>
+
+    <section id="moreSection" aria-labelledby="more-title" hidden>
+      <h2 class="projects-subtitle" id="more-title">Más repositorios</h2>
+      <div class="more-grid" id="projectsMore"></div>
+    </section>
   </main>
-  <script src="js/projects.js" defer></script>
+
+  <footer class="site-footer">
+    <span>© 2026 Jacinto Juárez Rodríguez</span>
+    <a href="index.html">← Volver al inicio</a>
+  </footer>
+</div>
+
+<script src="js/projects-data.js" defer></script>
+<script src="js/projects.js" defer></script>
 </body>
 </html>
