@@ -117,6 +117,7 @@
       title: 'Biblioteca App',
       description: 'Aplicación de gestión de préstamos: libros, lectores, avisos de retraso, estadísticas y tema claro/oscuro.',
       image: 'images/bibliotecaapp-preview.jpg',
+      demoUrl: 'https://appbiblioteca.42web.io/libros.php',
       technologies: ['PHP', 'MySQL', 'CSS', 'JavaScript']
     },
     peliculas: {
