@@ -69,7 +69,8 @@
     },
     pasapalabra: {
       title: 'Pasapalabra',
-      description: 'Juego de preguntas por letras que se juega directamente en el navegador.',
+      description: 'Juego de preguntas inspirado en el rosco de 27 letras, con tres modos de tiempo y marcador de aciertos y fallos.',
+      image: 'images/pasapalabra-preview.jpg',
       demoUrl: 'https://pasapalabranoa.vercel.app',
       technologies: ['HTML', 'CSS', 'JavaScript']
     },
@@ -112,16 +113,64 @@
       image: 'https://raw.githubusercontent.com/jacinto270/ejerciciosjava/main/01EjerciciosJavaScript-main/adivinacion/img/bola_de_cristal_adivinacion.png',
       technologies: ['JavaScript', 'HTML']
     },
-    bibliotecaapp: { title: 'Biblioteca App' },
-    peliculas: { title: 'Películas' },
-    'lista-compra': { title: 'Lista de la compra' },
-    login: { title: 'Sistema de login' },
-    directores: { title: 'Directores' },
-    'uf1842-TF': { title: 'UF1842 · Trabajo final' },
-    'bola-de-cristal': { title: 'Bola de cristal' },
-    trabajo1: { title: 'Trabajo 1' },
-    biblioteca: { title: 'Biblioteca' },
-    sql: { title: 'Ejercicios SQL' }
+    bibliotecaapp: {
+      title: 'Biblioteca App',
+      description: 'Aplicación de gestión de préstamos: libros, lectores, avisos de retraso, estadísticas y tema claro/oscuro.',
+      image: 'images/bibliotecaapp-preview.jpg',
+      technologies: ['PHP', 'MySQL', 'CSS', 'JavaScript']
+    },
+    peliculas: {
+      title: 'Películas',
+      description: 'Práctica de acceso a datos en PHP con el patrón DAO: listar, crear, actualizar y eliminar películas.',
+      image: 'images/peliculas-preview.jpg',
+      technologies: ['PHP', 'SQLite']
+    },
+    'lista-compra': {
+      title: 'Lista de la compra',
+      description: 'Aplicación PHP con base de datos SQLite para añadir productos con imagen, marcarlos como comprados y ver el progreso. Instalable como app (PWA).',
+      image: 'images/lista-compra-preview.jpg',
+      technologies: ['PHP', 'SQLite', 'CSS', 'PWA']
+    },
+    login: {
+      title: 'Sistema de login',
+      description: 'Práctica de formulario de inicio de sesión con sesiones en PHP y gestión de archivos.',
+      image: 'images/login-preview.jpg',
+      technologies: ['PHP', 'CSS']
+    },
+    directores: {
+      title: 'Directores',
+      description: 'Catálogo de películas y directores con registro de usuarios, verificación por correo, inicio de sesión y panel de gestión.',
+      image: 'images/directores-preview.jpg',
+      technologies: ['PHP', 'MySQL', 'CSS', 'JavaScript']
+    },
+    'uf1842-TF': {
+      title: 'UF1842 · Trabajo final',
+      description: 'Web de un club de montaña con cursos de temporada, rutas y un mensaje de bienvenida en audio con transcripción.',
+      image: 'images/uf1842-tf-preview.jpg'
+    },
+    'bola-de-cristal': {
+      title: 'Bola de cristal',
+      description: 'Pequeño juego de adivinación: pulsa el botón y la bola de cristal te da una respuesta al azar.',
+      image: 'images/bola-de-cristal-preview.jpg'
+    },
+    trabajo1: {
+      title: 'Trabajo 1',
+      description: 'Ejercicios de PHP: funciones, bucles, formularios, sesiones y una calculadora de tarifas.',
+      image: 'images/trabajo1-preview.jpg',
+      technologies: ['PHP', 'HTML']
+    },
+    biblioteca: {
+      title: 'Biblioteca',
+      description: 'Base de datos de una biblioteca con libros, lectores y préstamos, y una colección de consultas SQL.',
+      image: 'images/biblioteca-preview.jpg',
+      technologies: ['SQL', 'MySQL']
+    },
+    sql: {
+      title: 'Ejercicios SQL',
+      description: 'Prácticas de consultas SQL sobre una base de datos de películas y directores: filtros, orden y alias.',
+      image: 'images/sql-preview.jpg',
+      technologies: ['SQL', 'MySQL']
+    }
   };
 
   const prettifyName = name => name
