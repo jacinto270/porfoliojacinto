@@ -4,13 +4,13 @@
   const githubUser = 'jacinto270';
 
   // Proyectos que aparecen en la página principal (máximo 3).
-  const featured = ['demoviedb', 'paginaparfum2', 'mi-lista-de-canciones'];
+  const featured = ['demoviedb', 'paginaparfum2', 'bibliotecaapp'];
 
   // Orden en proyectos.html. Los repositorios que no estén aquí aparecen al final.
   const order = [
     'demoviedb',
     'paginaparfum2',
-    'mi-lista-de-canciones',
+    'bibliotecaapp',
     'proyectofinal',
     'pasapalabra',
     'galletasvg',
@@ -19,7 +19,7 @@
     'porfolio',
     'formulario-t3-practica',
     'ejerciciosjava',
-    'bibliotecaapp',
+    'mi-lista-de-canciones',
     'peliculas',
     'lista-compra',
     'login',
