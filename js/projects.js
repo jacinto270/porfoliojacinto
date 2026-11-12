@@ -1,5 +1,6 @@
 (() => {
-  const githubApi = 'https://api.github.com/users/jacinto270/repos?sort=updated&per_page=100';
+  const githubUser = 'jacinto270';
+  const githubApi = `https://api.github.com/users/${githubUser}/repos?sort=updated&per_page=100`;
   const list = document.getElementById('projectsList');
   const status = document.getElementById('projectsStatus');
   const portfolioTechnologies = ['HTML', 'CSS', 'JavaScript'];
@@ -10,12 +11,23 @@
   const projectOrder = [
     'paginaparfum2',
     'demoviedb',
+    'pasapalabra',
     'mi-lista-de-canciones',
+    'bibliotecaapp',
+    'directores',
+    'lista-compra',
+    'uf1842-TF',
     'adolescente',
     'galletasvg',
+    'bola-de-cristal',
     'ejerciciosjava',
     'proyectofinal',
     'formulario-t3-practica',
+    'biblioteca',
+    'sql',
+    'peliculas',
+    'login',
+    'trabajo1',
     'porfoliojacinto',
     'porfolio'
   ];
@@ -80,6 +92,70 @@
       image: 'images/portfolio-jacinto-preview.png',
       netlifyUrl: ''
     },
+    pasapalabra: {
+      title: 'El Rosco',
+      description: 'Juego de preguntas inspirado en el rosco de 27 letras, con tres modos de tiempo y marcador de aciertos y fallos.',
+      image: 'images/pasapalabra-preview.jpg',
+      netlifyUrl: 'https://pasapalabranoa.vercel.app'
+    },
+    'lista-compra': {
+      title: 'Lista de la compra',
+      description: 'Aplicación PHP con base de datos SQLite para añadir productos con imagen, marcarlos como comprados y ver el progreso. Instalable como app (PWA).',
+      image: 'images/lista-compra-preview.jpg',
+      technologies: ['PHP', 'SQLite', 'CSS', 'PWA']
+    },
+    'uf1842-TF': {
+      title: 'Club de montaña',
+      description: 'Web de un club de montaña con cursos de temporada, rutas y un mensaje de bienvenida en audio con transcripción.',
+      image: 'images/uf1842-tf-preview.jpg'
+    },
+    'bola-de-cristal': {
+      title: 'Bola de cristal',
+      description: 'Pequeño juego de adivinación: pulsa el botón y la bola de cristal te da una respuesta al azar.',
+      image: 'images/bola-de-cristal-preview.jpg'
+    },
+    biblioteca: {
+      title: 'Biblioteca',
+      description: 'Base de datos de una biblioteca con libros, lectores y préstamos, y una colección de consultas SQL.',
+      image: 'images/biblioteca-preview.jpg',
+      technologies: ['SQL', 'MySQL']
+    },
+    sql: {
+      title: 'Consultas SQL',
+      description: 'Prácticas de consultas SQL sobre una base de datos de películas y directores: filtros, orden y alias.',
+      image: 'images/sql-preview.jpg',
+      technologies: ['SQL', 'MySQL']
+    },
+    bibliotecaapp: {
+      title: 'Biblioteca municipal',
+      description: 'Aplicación de gestión de préstamos: libros, lectores, avisos de retraso, estadísticas y tema claro/oscuro.',
+      image: 'images/bibliotecaapp-preview.jpg',
+      technologies: ['PHP', 'MySQL', 'CSS', 'JavaScript']
+    },
+    directores: {
+      title: 'Catálogo de películas',
+      description: 'Catálogo de películas y directores con registro de usuarios, verificación por correo, inicio de sesión y panel de gestión.',
+      image: 'images/directores-preview.jpg',
+      technologies: ['PHP', 'MySQL', 'CSS', 'JavaScript']
+    },
+    peliculas: {
+      title: 'Películas (DAO)',
+      description: 'Práctica de acceso a datos en PHP con el patrón DAO: listar, crear, actualizar y eliminar películas.',
+      image: 'images/peliculas-preview.jpg',
+      technologies: ['PHP', 'SQLite']
+    },
+    login: {
+      title: 'Inicio de sesión',
+      description: 'Práctica de formulario de inicio de sesión con sesiones en PHP y gestión de archivos.',
+      image: 'images/login-preview.jpg',
+      technologies: ['PHP', 'CSS']
+    },
+    trabajo1: {
+      title: 'Primeros pasos con PHP',
+      description: 'Ejercicios de PHP: funciones, bucles, formularios, sesiones y una calculadora de tarifas.',
+      image: 'images/trabajo1-preview.jpg',
+      technologies: ['PHP', 'HTML']
+    },
     jacinto270: {
       title: 'Jacinto270 en GitHub',
       description: 'Mi perfil y mis proyectos en GitHub.',
@@ -120,14 +196,20 @@
     const card = makeElement('article', 'repo-card');
 
     const media = makeElement('div', 'repo-media');
-    const image = makeElement('img');
-    image.src = presentation.image;
-    image.alt = `Vista previa de ${title}`;
-    image.loading = 'lazy';
-    image.addEventListener('error', () => {
-      media.replaceChildren(makeElement('span', 'repo-image-placeholder', 'Añade una imagen de vista previa en js/projects.js'));
-    }, { once: true });
-    media.append(image);
+    const showPlaceholder = () => {
+      media.replaceChildren(makeElement('span', 'repo-image-placeholder', 'Vista previa no disponible'));
+    };
+    if (presentation.image) {
+      const image = makeElement('img');
+      image.src = presentation.image;
+      image.alt = `Vista previa de ${title}`;
+      image.loading = 'lazy';
+      image.decoding = 'async';
+      image.addEventListener('error', showPlaceholder, { once: true });
+      media.append(image);
+    } else {
+      showPlaceholder();
+    }
     card.append(media);
 
     const content = makeElement('div', 'repo-content');
@@ -137,7 +219,7 @@
     }
     const technologies = makeElement('ul', 'repo-technologies');
     technologies.setAttribute('aria-label', 'Tecnologías utilizadas');
-    portfolioTechnologies.forEach(technology => {
+    (presentation.technologies || portfolioTechnologies).forEach(technology => {
       technologies.append(makeElement('li', 'repo-technology', technology));
     });
     content.append(technologies);
@@ -148,13 +230,22 @@
       githubLink.rel = 'noopener noreferrer';
       content.append(githubLink);
     }
+    const links = makeElement('div', 'repo-links');
     if (presentation.netlifyUrl) {
       const demoLink = makeElement('a', 'repo-link', 'Ver proyecto online ↗');
       demoLink.href = presentation.netlifyUrl;
       demoLink.target = '_blank';
       demoLink.rel = 'noopener noreferrer';
-      content.append(demoLink);
+      links.append(demoLink);
     }
+    if (!presentation.githubUrl) {
+      const codeLink = makeElement('a', 'repo-link repo-link-secondary', 'Ver código ↗');
+      codeLink.href = repository.html_url || `https://github.com/${githubUser}/${repository.name}`;
+      codeLink.target = '_blank';
+      codeLink.rel = 'noopener noreferrer';
+      links.append(codeLink);
+    }
+    if (links.childElementCount) content.append(links);
     card.append(content);
     return card;
   };
@@ -182,8 +273,10 @@
         !repository || typeof repository.name !== 'string' || typeof repository.html_url !== 'string')) {
         throw new Error('La respuesta de GitHub no tiene el formato esperado.');
       }
-      renderRepositories(data);
-      setStatus(`${data.length} proyectos.`);
+      // Las bifurcaciones (forks) no son trabajo propio: se ocultan.
+      const ownRepositories = data.filter(repository => !repository.fork);
+      renderRepositories(ownRepositories);
+      setStatus(`${ownRepositories.length} proyectos.`);
     } catch (error) {
       console.error('No se pudieron actualizar los repositorios de GitHub.', error);
       renderRepositories(starterRepositories);

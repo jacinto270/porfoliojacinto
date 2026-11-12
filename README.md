@@ -1,4 +1,4 @@
-# Portfolio de Jacinto Juarez Rodriguez
+# Portfolio de Jacinto Juárez Rodríguez
 
 Portfolio personal estático creado con **HTML, CSS y JavaScript**, sin frameworks ni proceso de compilación. Presenta una ilustración interactiva, una sección de tarjetas con efecto de pintura, información personal y una página de proyectos que obtiene repositorios públicos desde GitHub.
 
@@ -30,27 +30,31 @@ Portfolio personal estático creado con **HTML, CSS y JavaScript**, sin framewor
 
 ```text
 .
-├── Retrato_en_capas.html       # Página principal del portfolio
+├── index.html                  # Página principal del portfolio
 ├── proyectos.html              # Listado de proyectos y repositorios
 ├── detalle.html                 # Página de detalle para una sección
 ├── README.md                    # Documentación del proyecto
 ├── css/
 │   └── portfolio.css            # Estilos compartidos y diseño adaptable
+├── favicon.svg, favicon-32x32.png, apple-touch-icon.png
+├── og-image.png                 # Imagen para redes sociales (1200×630)
+├── site.webmanifest
 ├── js/
+│   ├── theme-init.js            # Aplica el tema guardado antes de pintar
 │   ├── portfolio.js             # Tema, retrato y efecto de pintura
 │   ├── card-content.js          # Textos compartidos de las tarjetas
 │   ├── card-detail.js           # Carga el detalle solicitado por URL
 │   └── projects.js              # Consulta y renderizado de repositorios
-└── images/
-    ├── formulario-t3.jpg
-    ├── mi-lista-de-canciones.jpeg
+└── images/                      # Capturas de vista previa de cada proyecto (1200×800)
     ├── perfumes-preview.webp
-    └── portfolio-jacinto-preview.png
+    ├── pasapalabra-preview.jpg
+    ├── bibliotecaapp-preview.jpg
+    └── …
 ```
 
 ## Páginas
 
-### Página principal — `Retrato_en_capas.html`
+### Página principal — `index.html`
 
 Contiene la cabecera de navegación, el retrato ilustrado, el muro de tarjetas, la información de contacto y el pie de página. Las tarjetas del muro enlazan a la página de detalle o al listado de proyectos.
 
@@ -108,7 +112,7 @@ No hay dependencias de npm, backend ni paso de compilación. La página de proye
 Se recomienda servir la carpeta con un servidor estático local. Por ejemplo, en Visual Studio Code se puede abrir la carpeta y usar una extensión de servidor estático como Live Server. Después, abrir:
 
 ```text
-Retrato_en_capas.html
+index.html
 ```
 
 También se puede abrir directamente el archivo HTML en un navegador, aunque algunas funciones que consultan servicios externos pueden depender de las restricciones de seguridad del navegador al utilizar direcciones `file://`.
@@ -117,7 +121,7 @@ También se puede abrir directamente el archivo HTML en un navegador, aunque alg
 
 ### Datos personales y textos
 
-- Edita `Retrato_en_capas.html` para cambiar la navegación, el contenido de contacto, las tarjetas y la ilustración SVG.
+- Edita `index.html` para cambiar la navegación, el contenido de contacto, las tarjetas y la ilustración SVG.
 - Edita `js/card-content.js` para cambiar los textos de las tarjetas de experiencia, proyecto destacado y perfil. Los identificadores de las tarjetas deben coincidir con las claves del objeto de datos.
 
 ### Proyectos

@@ -6,12 +6,12 @@ window.portfolioCardContent = {
   },
   'proyecto-destacado': {
     title: 'Ideas en acción',
-    description: 'actualmente estoy desarrollando un proyecto personal que combina mis conocimientos en desarrollo web con mi pasión por la creatividad y la innovación con IA.',
+    description: 'Actualmente estoy desarrollando un proyecto personal que combina mis conocimientos en desarrollo web con mi pasión por la creatividad y la innovación con IA.',
     details: 'Estoy trabajando en un proyecto que busca integrar la inteligencia artificial en soluciones web innovadoras.'
   },
   perfil: {
     title: 'Lo que aporto',
-    description: 'gran capacidad de aprendizaje y adaptación a nuevas tecnologías, así como habilidades de comunicación y trabajo en equipo.',
-    details: 'mi amplia experiencia laboral me ha permitido desarrollar una sólida base en el área de la comunicación y el trabajo en equipo.'
+    description: 'Gran capacidad de aprendizaje y adaptación a nuevas tecnologías, así como habilidades de comunicación y trabajo en equipo.',
+    details: 'Mi amplia experiencia laboral me ha permitido desarrollar una sólida base en el área de la comunicación y el trabajo en equipo.'
   }
 };

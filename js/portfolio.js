@@ -3,11 +3,13 @@
   const themeToggleIcon = themeToggle.querySelector('[aria-hidden="true"]');
   const themeColor = document.querySelector('meta[name="theme-color"]');
   const systemPrefersDark = matchMedia('(prefers-color-scheme: dark)');
-  const savedTheme = localStorage.getItem('portfolio-theme');
-
-  if (savedTheme === 'light' || savedTheme === 'dark') {
-    document.documentElement.dataset.theme = savedTheme;
-  }
+  const saveTheme = theme => {
+    try {
+      localStorage.setItem('portfolio-theme', theme);
+    } catch (error) {
+      // Sin almacenamiento disponible: el tema se aplica solo en esta visita.
+    }
+  };
 
   const isDarkTheme = () => document.documentElement.dataset.theme
     ? document.documentElement.dataset.theme === 'dark'
@@ -25,7 +27,7 @@
   themeToggle.addEventListener('click', () => {
     const theme = isDarkTheme() ? 'light' : 'dark';
     document.documentElement.dataset.theme = theme;
-    localStorage.setItem('portfolio-theme', theme);
+    saveTheme(theme);
     updateThemeToggle();
   });
   systemPrefersDark.addEventListener('change', () => {
@@ -39,27 +41,46 @@
   let tx = 0, ty = 0, x = 0, y = 0;
   const hint = document.getElementById('hint');
   if (reduce) layers.forEach(layer => layer.classList.remove('blink'));
+  const setHint = text => {
+    if (hint.textContent !== text) hint.textContent = text;
+  };
+  const ease = reduce ? 1 : 0.12;
+  let frame = 0;
+  // El bucle solo corre mientras el retrato se mueve; en reposo no gasta CPU ni batería.
+  const loop = () => {
+    x += (tx - x) * ease;
+    y += (ty - y) * ease;
+    if (Math.abs(tx - x) < 0.001 && Math.abs(ty - y) < 0.001) {
+      x = tx;
+      y = ty;
+      frame = 0;
+    } else {
+      frame = requestAnimationFrame(loop);
+    }
+    stage.style.setProperty('--x', x.toFixed(4));
+    stage.style.setProperty('--y', y.toFixed(4));
+  };
+  const startLoop = () => {
+    if (!frame) frame = requestAnimationFrame(loop);
+  };
+  const resetAim = () => {
+    tx = 0;
+    ty = 0;
+    startLoop();
+  };
   const aim = (cx, cy) => {
     const r = stage.getBoundingClientRect();
     tx = clamp((cx - (r.left + r.width / 2)) / (innerWidth / 2));
     ty = clamp((cy - (r.top + r.height / 2)) / (innerHeight / 2));
-    hint.textContent = 'Tu retrato sigue el movimiento del cursor.';
+    setHint('Tu retrato sigue el movimiento del cursor.');
+    startLoop();
   };
   addEventListener('pointermove', e => aim(e.clientX, e.clientY), { passive: true });
   document.documentElement.addEventListener('pointerleave', () => {
-    tx = 0;
-    ty = 0;
-    hint.textContent = 'Mueve el cursor para que el retrato te siga.';
+    resetAim();
+    setHint('Mueve el cursor para que el retrato te siga.');
   });
-  addEventListener('blur', () => { tx = 0; ty = 0; });
-  const ease = reduce ? 1 : 0.12;
-  (function loop() {
-    x += (tx - x) * ease;
-    y += (ty - y) * ease;
-    stage.style.setProperty('--x', x.toFixed(4));
-    stage.style.setProperty('--y', y.toFixed(4));
-    requestAnimationFrame(loop);
-  })();
+  addEventListener('blur', resetAim);
 
   const cardContent = window.portfolioCardContent;
   const cards = [...document.querySelectorAll('.graffiti-card[data-card-id]')];
@@ -161,8 +182,12 @@
     const stopPainting = () => { painting = false; previous = null; };
     canvas.addEventListener('pointerup', stopPainting);
     canvas.addEventListener('pointercancel', stopPainting);
-    card.querySelector('.reveal-button').addEventListener('click', () => {
+    const revealButton = card.querySelector('.reveal-button');
+    revealButton.addEventListener('click', () => {
       card.classList.add('is-revealed');
+      revealButton.disabled = true;
+      // Lleva el foco al enlace de la tarjeta para que el teclado no se pierda.
+      card.querySelector('.card-tag')?.focus();
     });
   });
   const resizeObserver = new ResizeObserver(() => {

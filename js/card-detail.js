@@ -10,7 +10,7 @@
     return;
   }
 
-  document.title = `${data.title} — Jacinto Juarez Rodriguez`;
+  document.title = `${data.title} — Jacinto Juárez Rodríguez`;
   title.textContent = data.title;
   content.textContent = data.details;
 })();
