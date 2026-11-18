@@ -8,6 +8,7 @@
 
   // Orden en proyectos.html. Los repositorios que no estén aquí aparecen al final.
   const order = [
+    'tallerapp',
     'demoviedb',
     'paginaparfum2',
     'bibliotecaapp',
@@ -39,6 +40,13 @@
   // - demoUrl: demo publicada. Si se deja vacío, se usa la web indicada en GitHub (campo "homepage").
   // - technologies: etiquetas. Si se omite, se usa el lenguaje principal que detecta GitHub.
   const details = {
+    tallerapp: {
+      title: 'Taller Genil',
+      description: 'Gestión de un taller mecánico: reparaciones con piezas y mano de obra por horas, facturas imprimibles, clientes, estadísticas de ventas con gráficos y área privada para que cada cliente consulte sus facturas. Con login por roles, contraseñas cifradas y protección CSRF.',
+      image: 'images/tallerapp-preview.jpg',
+      demoUrl: '',
+      technologies: ['PHP', 'MySQL', 'JavaScript', 'CSS']
+    },
     demoviedb: {
       title: 'Archivos de Nevermore',
       description: 'Buscador de series ambientado en la familia Addams. Consulta la API de TVMaze, traduce las sinopsis al español con la API de MyMemory y añade efectos de sonido.',
